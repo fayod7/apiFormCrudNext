@@ -2,6 +2,7 @@
 import { FC, memo } from 'react';
 import userImg from '@/assets/user.jpg'
 import Image from 'next/image';
+
 export interface IUser{
     first_name: string
     last_name: string
@@ -15,7 +16,6 @@ interface Props{
     handleDelete: (id: string) => void;
     handleUpdate: (user: IUser) => void;
 }
-
 
 const UsersView:FC<Props> = ({ data, handleDelete, handleUpdate }) => {
   return (

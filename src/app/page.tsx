@@ -1,14 +1,16 @@
 'use client'
 import Form from "@/components/form/Form";
 import UsersView, { IUser } from "@/components/users-view/UsersView";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default  function Home() {
 
   const [users, setUsers] = useState<IUser[]>([]);
   const [editingUser, setEditingUser] = useState<IUser | null>(null);
 
-  
+    useEffect(() => {
+    fetchUsers();
+  }, []);
    const fetchUsers = async () => {
     const res = await fetch('https://689cc5cece755fe69786fba7.mockapi.io/user');
     const data = await res.json();
