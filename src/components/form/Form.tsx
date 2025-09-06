@@ -37,9 +37,7 @@ const Form:FC<Props>  = ({ editingUser, setEditingUser, refreshUsers }) => {
       setValue("last_name", editingUser.last_name)
       setValue("address", editingUser.address)
       setValue("gender", editingUser.gender)
-    } else {
-      reset()
-    }
+    } 
   }, [editingUser, setValue, reset])
 
   const onSubmit = async(data:any) => {

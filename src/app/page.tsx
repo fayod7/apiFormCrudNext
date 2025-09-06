@@ -16,7 +16,7 @@ export default  function Home() {
     const data = await res.json();
     setUsers(data);
   };
-  const handleDelete = async(id: string) => {
+  const handleDelete = async(id: string | undefined) => {
     const res = await fetch(`https://689cc5cece755fe69786fba7.mockapi.io/user/${id}`,{ method: 'DELETE'})
     fetchUsers();
 }
